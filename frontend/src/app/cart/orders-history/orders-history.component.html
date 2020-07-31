@@ -1,0 +1,44 @@
+<mat-list>
+  <div mat-subheader *ngIf="orders && orders.length">Recent orders</div>
+  <mat-list-item *ngFor="let order of orders; let i = index">
+    <mat-icon mat-list-icon>assignment_turned_in</mat-icon>
+    <div mat-line>
+      <div class="row ml-4 justify-content-between">
+        <div>
+          <small>{{order.address | shorter}}  </small> <small class="small text-muted">{{this.dateService.formatDate(order.date)}}</small>
+        </div>
+        <div class="mr-5">
+          {{currencyService.formatNumber(totalInOrder(i))}}
+        </div>
+      </div>
+
+    </div>
+    <div mat-line *ngFor="let item of order.cart.cartItems; let j = index">
+      <div class="row ml-4 justify-content-between">
+        <div>
+          <mat-icon mat-list-icon> local_pizza</mat-icon>
+          <span>{{item.product.uiName}} <span class="small">({{item.size}}'')</span> x {{item.qty}}</span>
+        </div>
+
+        <div class="mr-5 mt-3">
+          {{currencyService.formatNumber(sumLinesInOrder(i)[j])}}
+        </div>
+      </div>
+    </div>
+
+    <div mat-line>
+      <div class="row ml-4 justify-content-between">
+        <div>
+          <mat-icon mat-list-icon> local_shipping</mat-icon>
+          <span>Delivery</span>
+        </div>
+        <div class="mr-5 mt-2">
+          {{currencyService.formatNumber(3)}}
+        </div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>

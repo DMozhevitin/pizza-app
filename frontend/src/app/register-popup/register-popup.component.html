@@ -1,0 +1,48 @@
+<mat-dialog-content>
+  <h2 *ngIf="registerMode" class="text-center">Register</h2>
+  <h2 *ngIf="!registerMode" class="text-center">Login</h2>
+
+  <div class="flex-column justify-content-center">
+    <form  [formGroup]="selectedFormGroup" class="justify-content-center" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field class="ml-5 w-75">
+          <input type="text" matInput placeholder="Email" formControlName="email"/>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="ml-5 w-75">
+          <input type="password" matInput placeholder="Password" formControlName="password"/>
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="registerMode">
+        <mat-form-field class="ml-5 w-75">
+          <input type="text" matInput placeholder="Name" formControlName="name"/>
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="registerMode">
+        <mat-form-field class="ml-5 w-75">
+          <input type="text" matInput placeholder="Phone Number" formControlName="phoneNumber"/>
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="text-danger ml-5">
+        {{error}}
+      </p>
+
+      <div class="mt-5"></div>
+      <div class="mt-5"></div>
+
+      <div class="row w-75 ml-5 ">
+        <button *ngIf="registerMode" class="btn btn-block btn-success" type="submit">Register</button>
+        <button *ngIf="!registerMode" class="btn btn-block btn-success" type="submit">Log in</button>
+        <a [routerLink]="" *ngIf="!registerMode" class="mt-3" (click)="toggleMode()">Don't have an account? Just register!</a>
+        <a [routerLink]="" *ngIf="registerMode" class="mt-3" (click)="toggleMode()">Already have an account? Log in with it</a>
+      </div>
+
+
+    </form>
+  </div>
+</mat-dialog-content>

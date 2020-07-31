@@ -1,0 +1,21 @@
+<div class="card m-3 rounded"  style="width: 18rem; height: 30.25rem">
+  <img class="card-img-top border-bottom rounded-top" style="height: 17.5rem !important; width: 17.5rem !important;" src="{{this.imgPath()}}" alt="Product image">
+  <div class="card-body">
+      <div>
+        <h2 class="card-title text-center">{{product.uiName}}</h2>
+
+        <p class="card-text text-secondary">{{product.description}}</p>
+
+      </div>
+
+      <div class="h-25"></div>
+
+      <div class="row justify-content-between">
+
+        <h2 class="text-secondary align-middle ml-3 mb-0">From {{currencyService.formatNumber(this.minPrice())}}</h2>
+
+        <button (click)="openPopup()" class="btn btn-xs btn-success mb-1 mr-2">Choose</button>
+
+      </div>
+  </div>
+</div>

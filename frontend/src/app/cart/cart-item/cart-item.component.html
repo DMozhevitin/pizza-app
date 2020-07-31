@@ -1,0 +1,29 @@
+<div *ngIf="!deleted" class="row w-100">
+  <div class="col-md-12">
+    <div class="row ml-4 mb-4 border">
+      <div class="bg-light">
+        <img src="assets/img/pizza/{{cartItem.product.name}}.png" width="150" height="150">
+      </div>
+      <div class="col">
+        <h3 class="mb-0">{{cartItem.product.uiName}}</h3>
+        <p class="mb-1 text-muted text-uppercase small">Size: {{cartItem.size}}''</p>
+        <p class="text-secondary mb-0">{{cartItem.product.description}}</p>
+
+        <div class="row remove-item mt-4" (click)="removeItem()">
+          <mat-icon>delete</mat-icon>
+          <span class="text-muted text-uppercase small mt-1">Remove item</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row flex-row-reverse mt-1 mr-2">
+          <div class="btn-group" >
+            <button type="button" class="btn btn-danger" (click)="decQty()">-</button>
+<!--            <input [(ngModel)]="cartItem.qty" type="number" style="width: 2rem; height: 2.3rem">-->
+            <button class="btn btn-light" style="width: 2rem; height: 2.3rem">{{this.cartItem.qty}}</button>
+            <button type="button" class="btn btn-success" (click)="addQty()">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

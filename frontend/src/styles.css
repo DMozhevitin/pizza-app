@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~angular-notifier/styles.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  outline: none !important;
+}
+::ng-deep mat-button-toggle-group{
+  outline: none;
+}
+
+button:focus {outline:0;}
+
+.mat-button-toggle {
+  border: none !important;
+}
+
+.mat-button-toggle-label-content {
+  border: none !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

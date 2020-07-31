@@ -1,0 +1,29 @@
+<div class="row w-100">
+  <div *ngIf="isEmpty()" class="col">
+    <div class="ml-4">
+      <h1>Your cart is empty. You can choose delicious pizza on the <a routerLink="/">main page</a> </h1>
+    </div>
+    <div class="ml-4">
+      <app-orders-history></app-orders-history>
+    </div>
+  </div>
+
+  <div *ngIf="!isEmpty()" class="col-md-8">
+    <app-cart-item *ngFor="let item of cart.cartItems" [cart]="cart" [cartItem]="item"></app-cart-item>
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+<!--    <app-cart-item></app-cart-item>-->
+  </div>
+
+  <div *ngIf="!isEmpty()" class="col-md-4">
+    <app-order-details-card [cart]="cart"></app-order-details-card>
+
+    <app-orders-history></app-orders-history>
+  </div>
+</div>
+
+

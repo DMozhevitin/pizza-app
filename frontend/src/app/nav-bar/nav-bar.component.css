@@ -1,0 +1,11 @@
+.nav-link {
+  border: none !important;
+  cursor: pointer !important;
+  outline: none;
+}
+
+.navbar-brand {
+  border: none !important;
+  cursor: pointer !important;
+  outline: none;
+}
